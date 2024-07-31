@@ -181,6 +181,53 @@ ENDPOINTS = {
                 "expected_status_code": 201
             }
         }
+    },
+
+    "jobs": {
+        "url": "/jobs",
+        "method": "POST",
+        "templates": {
+            "csharp": {
+                "payload": {
+                    "title": "string",
+                    "description": "string",
+                    "location": "string",
+                    "salary": 0,
+                    "level": 0,
+                    "company": "string"
+                },
+                "expected_status_code": 201
+            },
+            "golang": {
+                "payload": {
+                    "title": "string",
+                    "salary": "5000-7000",
+                    "job_type": "string",
+                    "location": "string",
+                    "deadline": "2024-12-31T23:59:59Z",
+                    "work_mode": "string",
+                    "experience": "string",
+                    "how_to_apply": "string",
+                    "job_benefits": "string",
+                    "company_name": "string",
+                    "description": "string",
+                    "key_responsibilities": "string",
+                    "qualifications": "string"
+                },
+                "expected_status_code": 201
+            },
+            "php": {
+                "payload": {
+                    "title": "string",
+                    "description": "string",
+                    "location": "string",
+                    "salary": 0,
+                    "level": 0,
+                    "company": "string"
+                },
+                "expected_status_code": 201
+            }
+        }
     }
 
 }
@@ -249,6 +296,8 @@ if __name__ == "__main__":
             elif "organizations":
                 api_type = "csharp" if "csharp" in base_url else "golang" if "golang" in base_url else "php"
             elif "subscriptions":
+                api_type = "csharp" if "csharp" in base_url else "golang" if "golang" in base_url else "php"
+            elif "jobs":
                 api_type = "csharp" if "csharp" in base_url else "golang" if "golang" in base_url else "php"
             else:
                 api_type = "csharp" if "csharp" in base_url else "golang" if "golang" in base_url else "php"
